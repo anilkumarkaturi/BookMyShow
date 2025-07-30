@@ -1,15 +1,13 @@
 package com.anil.BookMyShow.Models;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.Date;
 import java.util.List;
 
-@Entity
+@Entity(name="shows")
 @Getter
 @Setter
 public class Show extends BaseModel{
@@ -23,8 +21,11 @@ public class Show extends BaseModel{
     private Screen screen;
     private Date startTime;
     private Date endTime;
+    @Enumerated(EnumType.ORDINAL)
+    @ElementCollection
     private List<Feature> features;
-    private String language;
+    @ManyToOne
+    private Language language;
 
 
 }

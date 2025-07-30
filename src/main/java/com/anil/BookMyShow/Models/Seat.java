@@ -10,8 +10,8 @@ import lombok.Setter;
 @Setter
 public class Seat extends BaseModel{
 
-    private int rowNumber;
-    private int columnNumber;
+    private int rowValue;
+    private int columnValue;
     private int seatNumber;
 
     @ManyToOne

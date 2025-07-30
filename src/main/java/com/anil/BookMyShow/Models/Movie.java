@@ -13,7 +13,9 @@ import java.util.List;
 public class Movie extends BaseModel{
 
     private String name;
-    private List<String> languages;
+
+    @ManyToMany
+    private List<Language> languages;
 
     @ManyToMany
     private List<Actor> actors;
